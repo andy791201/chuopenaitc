@@ -7,6 +7,7 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
 # Set OpenAI API details
 openai.api_type = "azure"
+openai.model="chuscus"
 openai.api_version = "2023-03-01"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 openai.api_base = os.getenv("OPENAI_API_BASE")
@@ -32,7 +33,7 @@ def aoai_chat_model(chat):
 
     # Send the recent messages to the OpenAI API and get the response
     response_chat = openai.ChatCompletion.create(
-        engine="chuscus",
+        engine="gpt-35-turbo",
         messages=recent_messages,
         temperature=0.7,
         max_tokens=1500,
