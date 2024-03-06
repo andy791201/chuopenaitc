@@ -7,7 +7,6 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
 # Set OpenAI API details
 openai.api_type = "azure"
-openai.model="chuscus"
 openai.api_version = "2023-03-01"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 openai.api_base = os.getenv("OPENAI_API_BASE")
