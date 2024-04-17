@@ -32,11 +32,10 @@ def aoai_chat_model(chat):
 
     # Send the recent messages to the OpenAI API and get the response
     response_chat = openai.ChatCompletion.create(
-        model='chuscus',
         engine="gpt-35-turbo",
         messages=recent_messages,
         temperature=0.7,
-        max_tokens=1500,
+        max_tokens=150,
         top_p=0.95,
         frequency_penalty=0,
         presence_penalty=0,
@@ -55,7 +54,7 @@ handler1 = WebhookHandler(os.getenv('LINE_CHANNEL_SECRET'))
 # This route serves as a health check or landing page for the web app.
 @app.route("/")
 def mewobot():
-    return 'chu'
+    return 'Cat Time!!!'
 
 # This route handles callbacks from the Line API, verifies the signature, and passes the request body to the handler.
 @app.route("/callback", methods=['POST'])
